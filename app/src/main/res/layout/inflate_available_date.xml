@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<data>
+    <variable
+        name="select_morning"
+        type="int"/>
+    <variable
+        name="select_afternoon"
+        type="int"/>
+    <variable
+        name="select_evening"
+        type="int"/>
+    <variable
+        name="view"
+        type="com.developer.u_glow.adapter.viewholder.AvailableDayViewHolder"/>
+</data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDay"
+                style="@style/Text.Bold.Large.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:text="@string/_m"
+                app:layout_constraintBottom_toBottomOf="@+id/rBtnMorning"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/rBtnMorning"
+                app:layout_constraintTop_toTopOf="@+id/rBtnMorning" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rBtnMorning"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:background="@drawable/bg_curve_white"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="@string/morn"
+                android:gravity="center"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/standard_0"
+                android:drawablePadding="@dimen/standard_0"
+                android:drawableStart="@{select_morning == 1 ?@drawable/bg_circle_pink_fill: @drawable/bg_circle_grey_fill}"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:onClick="@{()->view.onClickSelectMorning()}"
+                app:layout_constraintEnd_toStartOf="@+id/rBtnAfter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rBtnAfter"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:background="@drawable/bg_curve_white"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="@string/afternoon"
+                android:gravity="center"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/standard_0"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:drawablePadding="@dimen/standard_0"
+                android:onClick="@{()->view.onClickSelectAfternoon()}"
+                android:drawableStart="@{select_afternoon == 1 ?@drawable/bg_circle_pink_fill: @drawable/bg_circle_grey_fill}"
+                app:layout_constraintEnd_toStartOf="@+id/rBtnEvening"
+                app:layout_constraintStart_toEndOf="@+id/rBtnMorning"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rBtnEvening"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_curve_white"
+                android:onClick="@{()->view.onClickSelectEvening()}"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="@string/eve"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/standard_0"
+                android:gravity="center"
+                android:drawablePadding="@dimen/standard_0"
+                android:drawableStart="@{select_evening == 1 ?@drawable/bg_circle_pink_fill: @drawable/bg_circle_grey_fill}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rBtnAfter"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

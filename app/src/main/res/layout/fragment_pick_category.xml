@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.booking.PickCategoryFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearch"
+            style="@style/Text.Regular.Large.Black.Brown"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:background="@drawable/bg_grey_curved_fill"
+            android:hint="@string/search"
+            android:drawablePadding="@dimen/_8sdp"
+            android:drawableEnd="@drawable/ic_search"
+            android:textColorHint="@color/textBlack"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivClose" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvWho"
+            app:layout_constraintTop_toBottomOf="@id/etSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_32sdp"
+            style="@style/Text.Bold.xLarge.Black.Brown"
+            android:text="@string/who_is_this_for"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvKnow"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tvWho"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_4sdp"
+            style="@style/Text.Regular.Medium.Black.Brown"
+            android:text="@string/let_us_know_who_will_be_there"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvKnow">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivJustMe"
+            android:src="@drawable/ic_just_me"
+            android:layout_marginEnd="@dimen/_4sdp"
+            app:layout_constraintEnd_toStartOf="@+id/ivGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvJustMe"
+            style="@style/Text.Bold.xLarge.Black.Brown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/just_me"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/ivJustMe"
+            app:layout_constraintStart_toStartOf="@+id/ivJustMe"
+            app:layout_constraintTop_toBottomOf="@id/ivJustMe" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivGroup"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:src="@drawable/ic_group"
+            android:layout_marginEnd="@dimen/_16sdp"
+            app:layout_goneMarginStart="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivJustMe"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGroup"
+            style="@style/Text.Bold.xLarge.Black.Brown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/a_group"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/ivGroup"
+            app:layout_constraintStart_toStartOf="@+id/ivGroup"
+            app:layout_constraintTop_toBottomOf="@id/ivGroup" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPeople"
+            style="@style/Text.Regular.Medium.Black.Brown"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:text="@string/how_many_people_are_in_the_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consPeople" />
+
+        <com.developer.u_glow.view.widget.CustomSpinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_line"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvPeople"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:paddingBottom="@dimen/_24sdp"
+            android:background="@drawable/bg_curve_top_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvViewBooking"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:text="@string/pick_a_category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUpcoming"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:text="@string/choose_below_start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvViewBooking" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUpcoming"
+                app:spanCount="3"
+                tools:itemCount="9"
+                tools:listitem="@layout/inflate_category" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGlowHistory"
+                style="@style/CurvedButton"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_green_curved_fill"
+                android:text="@string/btnNext"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/rvCategory"
+                app:layout_constraintStart_toStartOf="@+id/rvCategory"
+                app:layout_constraintTop_toBottomOf="@+id/rvCategory" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

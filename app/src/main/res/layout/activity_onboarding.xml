@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.activity.onboarding.OnBoardActivity" />
+
+    <variable
+        name="pos"
+        type="int" />
+
+        <import type="com.developer.u_glow.util.Constants"/>
+    </data>
+    
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    tools:context=".view.activity.splash.SplashActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_marginVertical="@dimen/_24sdp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvLarge"
+            android:padding="@dimen/_16sdp"
+            android:elevation="@dimen/_2sdp"
+            style="@style/Text.Bold.Large.Black.Brown"
+            android:textColor="@color/green"
+            android:onClick="@{()->view.onClickSkip()}"
+            android:text="@{pos == Constants.Count.two ? @string/btnNext : @string/btnSkip}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@+id/pageIndicator"/>
+
+        <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+            android:id="@+id/pageIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:selectedDotColor="@color/colorAccent"
+            android:layout_margin="@dimen/_16sdp"
+            app:dotsSize="@dimen/_12sdp"
+            app:dotsSpacing="@dimen/_4sdp"
+            app:dotsWidthFactor="2.5"
+            app:dotsStrokeWidth="@dimen/_2sdp"
+            app:dotsStrokeColor="@color/colorAccent"
+            app:stiffness="300"
+            app:dotsColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

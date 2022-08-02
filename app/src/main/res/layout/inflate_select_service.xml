@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="listener"
+            type="com.developer.u_glow.adapter.viewholder.SelectServiceViewHolder" />
+
+        <variable
+            name="select"
+            type="boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHair"
+                style="@style/Text.Regular.Large.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@{select? @drawable/ic_down_black_fill:@drawable/ic_arrow_up_white_fill}"
+                android:gravity="start"
+                android:onClick="@{()->listener.showAndHide(position)}"
+                android:paddingVertical="@dimen/_14sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/hair"
+                android:background="@{select? @color/white:@color/dBgGrey}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvHair"
+                android:background="@color/green"
+                android:visibility="@{select?View.GONE:View.VISIBLE}"
+                >
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/tvBeauty"-->
+<!--                    style="@style/Text.Regular.Large.White.Brown"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableEnd="@drawable/ic_arrow_up_white_fill"-->
+<!--                    android:gravity="start|center_vertical"-->
+<!--                    android:paddingVertical="@dimen/_10sdp"-->
+<!--                    android:paddingStart="@dimen/_16sdp"-->
+<!--                    android:paddingEnd="@dimen/_16sdp"-->
+<!--                    android:text="@string/beauty"-->
+<!--                    android:background="@color/DbgGrey"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                <View
+                    android:id="@+id/viewEye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/colorView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSelectSubService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewEye"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+
+                    android:id="@+id/tvSuggest"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="center"
+                    android:text="@string/additional_service"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvSelectSubService" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/evSuggest"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:background="@drawable/bg_curve_white"
+                    android:gravity="top"
+                    android:hint="@string/enter_additional_service"
+                    android:inputType="textMultiLine"
+                    android:isScrollContainer="false"
+                    android:overScrollMode="always"
+                    android:padding="@dimen/_10sdp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSuggest" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.profile.SelectServiceFragment" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/green"
+        android:paddingTop="@dimen/_16sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeading"
+            style="@style/Text.Bold.xLarge.White.Brown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_service"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSetup"
+            style="@style/Text.Regular.Medium.White.Brown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/add_your_service"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/grpEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="vFirst,vSecond,vLast,vHorizontal,vThird" />
+
+        <View
+            android:id="@+id/vHorizontal"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+            app:layout_constraintEnd_toStartOf="@+id/vLast"
+            app:layout_constraintStart_toEndOf="@id/vFirst"
+            app:layout_constraintTop_toTopOf="@id/vFirst" />
+
+        <View
+            android:id="@+id/vFirst"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/bg_white_curved_fill"
+            android:elevation="@dimen/_1sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSetup" />
+
+        <View
+            android:id="@+id/vSecond"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/bg_white_curved_fill"
+            android:elevation="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+            app:layout_constraintEnd_toStartOf="@+id/vThird"
+            app:layout_constraintStart_toEndOf="@+id/vFirst"
+            app:layout_constraintTop_toTopOf="@+id/vFirst" />
+
+        <View
+            android:id="@+id/vThird"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/bg_white_outline_green_fill"
+            android:elevation="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+            app:layout_constraintEnd_toStartOf="@+id/vLast"
+            app:layout_constraintStart_toEndOf="@+id/vSecond"
+            app:layout_constraintTop_toTopOf="@+id/vFirst" />
+
+        <View
+            android:id="@+id/vLast"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_white_outline_green_fill"
+            android:elevation="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/vFirst" />
+
+        <androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_0"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vFirst"
+            tools:context=".view.fragment.profile.SelectServiceFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_24sdp">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSelectService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnUpdate"
+                    style="@style/CurvedButton"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_32sdp"
+                    android:background="@drawable/bg_oval_white_fill"
+                    android:onClick="@{()->view.onClickNavigation()}"
+                    android:singleLine="true"
+                    android:text="@string/next"
+                    android:textColor="@color/green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvSelectService" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

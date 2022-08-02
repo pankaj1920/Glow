@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.developer.u_glow.viewmodel.booking.SelectGlowViewModel" />
+
+        <variable
+            name="position"
+            type="int" />
+
+<!--        <variable-->
+<!--            name="data"-->
+<!--            type="com.developer.u_glow.model.dto.PostGlowData" />-->
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/consService"
+        android:background="@drawable/bg_green_outer_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_remove"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:onClick="@{()->listener.deleteService(position)}"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHair"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_14sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/standard_0"
+                android:text="@string/eyebrow_wax"
+                app:layout_constraintStart_toEndOf="@+id/imDelete"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

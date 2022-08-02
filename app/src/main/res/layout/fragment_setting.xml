@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.settings.SettingFragment" />
+    </data>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.settings.SettingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSetting"
+            style="@style/Text.Bold.xLarge.Black.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:gravity="center"
+            android:text="@string/settingSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtWhatUNeed"
+            style="@style/Text.Regular.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/whatYouNeed"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/consCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSetting" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consCard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_0"
+            android:layout_margin="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:background="@drawable/bg_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtWhatUNeed">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCircle"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:src="@drawable/ic_ellipse_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imEdit"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_pen"
+                app:layout_constraintBottom_toBottomOf="@+id/ivCircle"
+                app:layout_constraintEnd_toEndOf="@+id/ivCircle"
+                app:layout_constraintStart_toStartOf="@+id/ivCircle"
+                app:layout_constraintTop_toTopOf="@+id/ivCircle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtYourCard"
+                style="@style/Text.Bold.Medium.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:text="@string/your_card"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/ivCircle"
+                app:layout_constraintStart_toEndOf="@+id/ivCircle"
+                app:layout_constraintTop_toTopOf="@+id/ivCircle" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:src="@drawable/ic_visa_white"
+                app:layout_constraintBottom_toBottomOf="@+id/ivCircle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivCircle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNumber"
+                style="@style/Text.Bold.xLarge.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:maxLines="2"
+                android:text="@string/card_no"
+                android:textSize="@dimen/_30sp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintBottom_toTopOf="@+id/tvName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imEdit" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                style="@style/Text.Regular.Small.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNumber" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txUserName"
+                style="@style/Text.Bold.Medium.White.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="@string/customer_name"
+                app:layout_constraintEnd_toStartOf="@+id/txExpiryDate"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txExpiry"
+                style="@style/Text.Regular.Small.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="@string/expiry"
+                app:layout_constraintEnd_toEndOf="@+id/txExpiryDate"
+                app:layout_constraintStart_toStartOf="@+id/txExpiryDate"
+                app:layout_constraintTop_toBottomOf="@+id/txtNumber" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txExpiryDate"
+                style="@style/Text.Bold.Medium.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/_4sdp"
+                android:paddingStart="@dimen/standard_0"
+                android:text="@string/expiry_date"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txUserName"
+                app:layout_constraintTop_toBottomOf="@+id/txExpiry" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtPaymentType"
+            style="@style/Text.Regular.Large.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_4sdp"
+            android:text="@string/payment_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consCard" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerPaymentType"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/ic_dropdown_icon"
+            android:maxLines="1"
+            android:gravity="start"
+            android:paddingEnd="10dp"
+            android:paddingStart="@dimen/standard_0"
+            android:textSize="@dimen/_16sdp"
+            android:theme="@style/Widget.AppCompat.Spinner.Underlined"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPaymentType" />
+
+        <View
+            android:id="@+id/viewSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_1"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@color/textBlack"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerPaymentType" />
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtNameOnCard"
+            style="@style/Text.Regular.Large.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:text="@string/name_on_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewSpinner"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtNameOnCard"
+            style="@style/Text.Regular.Medium.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:backgroundTint="@color/textBlack"
+            android:drawableEnd="@drawable/ic_mobile_icon"
+            android:hint="@string/customer_name"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNameOnCard"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCardNumber"
+            style="@style/Text.Regular.Large.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:text="@string/card_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNameOnCard"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtCardNumber"
+            style="@style/Text.Regular.Medium.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:backgroundTint="@color/textBlack"
+            android:drawableEnd="@drawable/ic_email_icon"
+            android:hint="@string/card_no"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCardNumber"
+            tools:ignore="RtlSymmetry"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtExpiry"
+            style="@style/Text.Regular.Large.Brown"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:text="@string/expiry"
+            app:layout_constraintEnd_toStartOf="@+id/txtCvv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCardNumber"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtExpiry"
+            style="@style/Text.Regular.Medium.Brown"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:backgroundTint="@color/textBlack"
+            android:drawableEnd="@drawable/ic_password"
+            android:hint="@string/cvv_no"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edtCvv"
+            app:layout_constraintTop_toBottomOf="@+id/txtExpiry"
+            tools:ignore="RtlSymmetry" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCvv"
+            style="@style/Text.Regular.Large.Brown"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:text="@string/cvv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtExpiry"
+            app:layout_constraintTop_toBottomOf="@+id/edtCardNumber"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtCvv"
+            style="@style/Text.Regular.Medium.Brown"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:backgroundTint="@color/textBlack"
+            android:drawableEnd="@drawable/ic_password"
+            android:hint="@string/expiry_date"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:typeface="normal"
+            app:layout_constraintEnd_toStartOf="@+id/edtExpiry"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCvv"
+            tools:ignore="RtlSymmetry" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUpdate"
+            style="@style/CurvedButton"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/button_green_empty"
+            android:singleLine="true"
+            android:text="@string/updated_details"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCvv" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:paddingBottom="@dimen/_24sdp"
+            android:background="@drawable/bg_curve_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnUpdate">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHelp"
+                style="@style/Text.Bold.xLarge.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:text="@string/need_help"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSearchFaq"
+                style="@style/Text.Regular.Medium.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/search_faq"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHelp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReadPrivacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Text.Regular.Large.White.Brown"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/button_fill_green_with_outline"
+                android:singleLine="true"
+                android:gravity="center"
+                android:textSize="@dimen/_18sp"
+                android:text="@string/read_privacy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSearchFaq" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvViewFaq"
+                style="@style/Text.Regular.Large.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/button_fill_green_with_outline"
+                android:singleLine="true"
+                android:gravity="center"
+                android:textSize="@dimen/_18sp"
+                android:text="@string/view_our_faq_section"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReadPrivacy" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGetInTouch"
+                style="@style/Text.Bold.xLarge.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:text="@string/get_in_touch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvViewFaq" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSendMessage"
+                style="@style/Text.Regular.Medium.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:text="@string/or_else_send_a_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGetInTouch" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cardViewMessage"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_curve_white"
+                android:gravity="top"
+                android:padding="@dimen/_10sdp"
+                android:hint="@string/write_your_message_here"
+                android:scrollbars="vertical"
+                android:scrollbarStyle="insideInset"
+                android:overScrollMode="always"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="false"
+                android:textColorHint="@color/textBlack"
+                app:layout_constraintBottom_toTopOf="@+id/btnSendMessage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSendMessage"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSendMessage"
+                style="@style/CurvedButton"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/button_fill_green_with_outline"
+                android:text="@string/send_message"
+                android:onClick="@{()->view.onClickNavigation()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewMessage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDeleteAccount"
+                style="@style/Text.Bold.Large.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:gravity="center"
+                android:letterSpacing="0.2"
+                android:text="@string/delete_account"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSendMessage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+</layout>

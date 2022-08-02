@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="view"
+        type="com.developer.u_glow.view.fragment.analytics.AnalyticsFragment" />
+</data>
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".view.fragment.AnalyticsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAnalytics"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/analytics"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtUpdateAccount"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/update_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAnalytics" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerGlowTotal"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:background="@drawable/bg_spinner"
+                android:entries="@array/total_glow"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:gravity="start"
+                android:theme="@style/Spinner_total_glow"
+                app:layout_constraintEnd_toStartOf="@+id/tvTotalNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateAccount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalNumber"
+                style="@style/Text.Bold.Large.White.Brown"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/bg_half_curved_green_fill"
+                android:gravity="start"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/standard_0"
+                android:text="@string/_10"
+                android:maxLength="10"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spinnerGlowTotal"
+                app:layout_constraintBottom_toBottomOf="@+id/spinnerGlowTotal"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectRange"
+                style="@style/Text.Regular.Medium.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@string/select_date_range"
+                android:textAlignment="textStart"
+                android:textColor="@color/textGrey"
+                app:layout_constraintEnd_toStartOf="@+id/ivDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalNumber" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDate"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_date_range"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalNumber" />
+
+            <View
+                android:id="@+id/viewDate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/textBlack"
+                app:layout_constraintTop_toBottomOf="@+id/ivDate" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewDate" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginHorizontal="@dimen/_26sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/chartColor"
+                app:layout_constraintBottom_toBottomOf="@id/lineChart" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalEarnings"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@string/total_earnings"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineChart" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerEarnings"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:background="@drawable/bg_spinner"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:entries="@array/total_earnings"
+                android:textAlignment="textStart"
+                android:theme="@style/Spinner_total_glow"
+                app:layout_constraintEnd_toStartOf="@+id/tvEarningAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalEarnings" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEarningAmount"
+                style="@style/Text.Bold.Large.White.Brown"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/bg_half_curved_green_fill"
+                android:gravity="start"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/standard_0"
+                android:text="@string/_10000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spinnerEarnings"
+                app:layout_constraintBottom_toBottomOf="@+id/spinnerEarnings"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectRangeEarning"
+                style="@style/Text.Regular.Medium.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@string/select_date_range"
+                android:textAlignment="textStart"
+                android:textColor="@color/textGrey"
+                app:layout_constraintEnd_toStartOf="@+id/ivDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEarningAmount" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDateEarnings"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_date_range"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEarningAmount" />
+
+            <View
+                android:id="@+id/viewDateEarnings"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/textBlack"
+                app:layout_constraintTop_toBottomOf="@+id/ivDateEarnings" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChartEarnings"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:onClick="@{()->view.onClickNavigation()}"
+                android:layout_marginBottom="@dimen/_32sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewDateEarnings" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginHorizontal="@dimen/_26sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/chartColor"
+                app:layout_constraintBottom_toBottomOf="@id/lineChartEarnings" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

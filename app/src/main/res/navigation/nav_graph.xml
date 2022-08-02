@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_dashboard_fragment">
+
+    <fragment
+        android:id="@+id/nav_dashboard_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard"
+        android:label="Dashboard"
+        >
+        <action
+            android:id="@+id/action_to_pick_category"
+            app:destination="@id/nav_pick_category_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pick_category_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.PickCategoryFragment"
+        tools:layout="@layout/fragment_pick_category"
+        android:label="Pick_Category"
+        >
+        <argument
+            android:name="position"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='""' />
+        <argument
+            android:name="forMe"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="forGroup"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='""' />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_select_sub_category_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.SelectSubCategoryFragment"
+        tools:layout="@layout/fragment_subcategory"
+        android:label="Pick_Sub_Category"
+        >
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_nav_select_sub_category_fragment_to_nav_select_glow_fragment"
+            app:destination="@id/nav_select_glow_fragment"
+            app:popUpTo="@id/nav_select_glow_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_booking_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.BookingFragment"
+        tools:layout="@layout/fragment_booking"
+        android:label="Booking"
+        />
+
+    <fragment
+        android:id="@+id/nav_booking_detail_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.BookingDetailFragment"
+        tools:layout="@layout/fragment_booking_details"
+        android:label="Booking_Detail"
+        />
+
+    <fragment
+        android:id="@+id/nav_select_glow_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.SelectGlowFragment"
+        tools:layout="@layout/fragment_select_glow"
+        android:label="Select_Glow"
+        />
+
+    <fragment
+        android:id="@+id/nav_detail_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.DetailsFragment"
+        tools:layout="@layout/fragment_details"
+        android:label="Details"
+        />
+
+    <fragment
+        android:id="@+id/nav_glow_posted_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.GlowPostedFragment"
+        tools:layout="@layout/fragment_glow_posted"
+        android:label="Glow_Posted"
+        />
+
+    <fragment
+        android:id="@+id/nav_notification_fragment"
+        android:name="com.developer.u_glow.view.fragment.notification.NotificationFragment"
+        tools:layout="@layout/fragment_notification"
+        android:label="Notification"
+        />
+
+    <fragment
+        android:id="@+id/nav_your_profile"
+        android:name="com.developer.u_glow.view.fragment.profile.YourProfileFragment"
+        tools:layout="@layout/fragment_your_profile"
+        android:label="Your_Profile"
+        />
+
+    <fragment
+        android:id="@+id/nav_setting_fragment"
+        android:name="com.developer.u_glow.view.fragment.settings.SettingFragment"
+        tools:layout="@layout/fragment_setting"
+        android:label="Setting"
+        />
+
+    <fragment
+        android:id="@+id/nav_about_fragment"
+        android:name="com.developer.u_glow.view.fragment.page.AboutUsFragment"
+        android:label="About" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_faq_fragment"
+        android:name="com.developer.u_glow.view.fragment.page.FaqFragment"
+        android:label="Faq" />
+
+    <fragment
+        android:id="@+id/nav_contact_fragment"
+        android:name="com.developer.u_glow.view.fragment.page.ContactUsFragment"
+        android:label="Contact" />
+
+</navigation>

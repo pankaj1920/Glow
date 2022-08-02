@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+    <variable
+        name="selected"
+        type="boolean" />
+    <variable
+        name="view"
+        type="com.developer.u_glow.adapter.viewholder.SelectGlowViewHolder" />
+</data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="@dimen/_16sdp"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:id="@+id/consWax"
+    android:background="@{selected? @drawable/bg_curved_grey_border:@drawable/bg_green_outer_border}">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHair"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/_8sdp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_14sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/standard_0"
+        android:text="@string/eyebrow_wax"
+        android:drawableStart="@{selected ? @drawable/bg_circle_grey_fill: @drawable/bg_circle_pink_fill}"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

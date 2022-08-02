@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="isCustomer"
+            type="boolean" />
+
+        <import type="android.view.View"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_16sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHeading"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="@dimen/standard_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:text="@string/enter_details"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etName"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/textBlack"
+        android:drawableEnd="@drawable/ic_profile"
+        android:hint="@string/your_name"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBusinessName"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:visibility="@{isCustomer ? View.GONE : View.VISIBLE, default=gone}"
+        android:text="@string/business_name"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etBusinessName"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/textBlack"
+        android:drawableEnd="@drawable/ic_profile"
+        android:visibility="@{isCustomer ? View.GONE : View.VISIBLE, default=gone}"
+        android:hint="@string/your_business_name"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBusinessName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPhone"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="@string/mobile_phone"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBusinessName" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPhone"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/textBlack"
+        android:drawableEnd="@drawable/ic_mobile"
+        android:hint="@string/your_phone_no"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:singleLine="true"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEmail"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="@string/email_id"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etEmail"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/textBlack"
+        android:drawableEnd="@drawable/ic_email"
+        android:hint="@string/your_email"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:singleLine="true"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPassword"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="@string/password"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPassword"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/textBlack"
+        android:drawableEnd="@drawable/ic_password"
+        android:hint="@string/caps_password"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvConfirmPassword"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="@string/confirm_password"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etConfirmPassword"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/textBlack"
+        android:drawableEnd="@drawable/ic_password"
+        android:hint="@string/caps_confirm_password"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmPassword" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHear"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="@string/where_did_you_hear"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword" />
+
+    <com.developer.u_glow.view.widget.CustomSpinner
+        android:id="@+id/etHear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_line"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:entries="@array/select_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHear"/>
+
+    <!--<androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etHear"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/textBlack"
+        android:drawableEnd="@drawable/ic_down_black_fill"
+        android:hint="@string/online"
+        android:focusable="false"
+        android:enabled="false"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:selectAllOnFocus="true"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHear" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

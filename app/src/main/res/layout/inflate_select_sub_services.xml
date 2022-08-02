@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    <variable
+        name="position"
+        type="int" />
+
+    <variable
+        name="listener"
+        type="com.developer.u_glow.adapter.viewholder.SelectSubServiceViewHolder" />
+
+    <variable
+        name="select"
+        type="boolean" />
+
+    <import type="android.view.View" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:background="@drawable/bg_curve_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEyes"
+            style="@style/Text.Regular.Medium.Black.Brown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@{select?@drawable/ic_down_black_fill:@drawable/ic_up_arrow}"
+            android:drawablePadding="@dimen/_8sdp"
+            android:gravity="start|center_vertical"
+            android:onClick="@{()->listener.showAndHide()}"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingVertical="@dimen/_12sdp"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:text="@string/eyes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/viewEyes"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="@{select?View.GONE:View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEyes"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSelectSubServiceList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:visibility="@{select?View.GONE:View.VISIBLE}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewEyes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

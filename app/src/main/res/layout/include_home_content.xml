@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.activity.home.HomeActivity" />
+        <variable
+            name="isBlack"
+            type="boolean" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clParent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBack"
+        style="@style/Text.Bold.Medium.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_8"
+        android:text="@string/back"
+        android:textColor="@{isBlack ? @color/textBlack : @color/white}"
+        android:drawablePadding="@dimen/_8sdp"
+        android:drawableStart="@{isBlack ? @drawable/ic_left : @drawable/ic_left_white}"
+        android:gravity="center"
+        android:singleLine="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivNav" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@{isBlack ? @drawable/ic_down : @drawable/ic_down_white}"
+        app:layout_constraintBottom_toBottomOf="@id/tvUser"
+        app:layout_constraintStart_toEndOf="@+id/tvUser"
+        app:layout_constraintTop_toTopOf="@id/tvUser"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUser"
+        style="@style/Text.Bold.Medium.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingStart="@dimen/standard_0"
+        android:text="Elaine"
+        android:gravity="center"
+        android:maxWidth="@dimen/_100sdp"
+        android:onClick="@{()->view.onClickUser()}"
+        android:singleLine="true"
+        android:textColor="@{isBlack ? @color/textBlack : @color/white}"
+        android:drawablePadding="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivNav" />
+
+   <!-- <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down"
+        app:layout_constraintBottom_toBottomOf="@id/tvUser"
+        app:layout_constraintStart_toEndOf="@+id/tvUser"
+        app:layout_constraintTop_toTopOf="@+id/tvUser"
+        app:layout_constraintVertical_bias="0.65999997" />-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivNav"
+        android:onClick="@{()->view.onClickOpenDrawer()}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:src="@{isBlack ? @drawable/ic_nav : @drawable/ic_nav_white}"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fvHome"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/standard_0"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/ivNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:defaultNavHost="true"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@color/textBlack"
+        app:itemTextAppearanceActive="@style/Text.Bold.xSmall.Black.Brown"
+        app:itemTextAppearanceInactive="@style/Text.Bold.xSmall.Black.Brown"
+        app:itemTextColor="@android:color/black"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+    <View
+        android:elevation="@dimen/_1sdp"
+        android:layout_width="@dimen/_52sdp"
+        android:layout_height="@dimen/_52sdp"
+        android:background="@drawable/bg_oval_white"
+        app:layout_constraintBottom_toBottomOf="@+id/fab"
+        app:layout_constraintEnd_toEndOf="@id/fab"
+        app:layout_constraintStart_toStartOf="@+id/fab"
+        app:layout_constraintTop_toTopOf="@+id/fab" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:contentDescription="@string/open_glow"
+        android:foregroundGravity="center"
+        android:scaleType="center"
+        android:src="@drawable/ic_plus"
+        android:tint="@color/white"
+        app:backgroundTint="@color/white"
+        app:elevation="@dimen/_7sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

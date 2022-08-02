@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLabel"
+            style="@style/Text.Bold.xLarge.White.Brown"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_oval_pink"
+            android:elevation="@dimen/_1sdp"
+            android:gravity="center"
+            android:text="€60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/bg_curve_white_offers"
+            android:paddingVertical="@dimen/_16sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTime"
+                style="@style/Text.Regular.Small.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 hour ago"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeading"
+                style="@style/Text.Bold.Large.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="start"
+                android:text="Cloud Beauty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:numStars="4"
+                android:progressTint="@color/orange"
+                android:rating="4"
+                android:theme="@style/RatingBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeading" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDate"
+                style="@style/Text.Regular.Small.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/bg_grey_curved_fill"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_2sdp"
+                android:text="Mon 12/12/2020"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rating" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDuration"
+                style="@style/Text.Regular.Small.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:background="@drawable/bg_grey_curved_fill"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_2sdp"
+                android:text="2PM"
+                android:textColor="@color/textGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".0"
+                app:layout_constraintStart_toEndOf="@+id/tvDate"
+                app:layout_constraintTop_toTopOf="@+id/tvDate"
+                app:layout_constraintWidth_default="wrap" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAccept"
+                style="@style/CurvedButton"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/bg_orange_curved_fill"
+                android:text="@string/accept"
+                android:textSize="@dimen/sp_14"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toStartOf="@+id/tvReject"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReject"
+                style="@style/CurvedButton"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/bg_orange_curved_outline"
+                android:text="@string/reject"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/sp_14"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvAccept"
+                app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

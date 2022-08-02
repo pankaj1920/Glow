@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<data>
+    <variable
+        name="view"
+        type="com.developer.u_glow.view.fragment.settings.SettingPassportFragment" />
+    <variable
+        name="selectedPassport"
+        type="boolean"/>
+    <variable
+        name="selectedAddress"
+        type="boolean"/>
+</data>
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.settings.SettingPassportFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSetting"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:text="@string/settingSmall"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtWhatUNeed"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/upload_identification"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSetting" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPassport"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:text="@string/passport"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWhatUNeed" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consPages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPassport">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFront"
+                    style="@style/Text.Bold.Medium.Black.Brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:gravity="center"
+                    android:text="@string/front_page"
+                    android:onClick="@{()->view.onClickChangeColor()}"
+                    android:textColor="@{selectedPassport==true? @color/textBlack:@color/colorSelected}"
+                    app:layout_constraintEnd_toEndOf="@+id/viewFront"
+                    app:layout_constraintStart_toStartOf="@+id/viewFront"
+
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/viewFront"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:background="@{selectedPassport==true? @color/textBlack:@color/colorSelected}"
+                    app:layout_constraintEnd_toStartOf="@+id/viewBack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFront" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBack"
+                    style="@style/Text.Bold.Medium.Black.Brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/back_page"
+                    android:onClick="@{()->view.onClickChangeColor()}"
+                    android:textColor="@{selectedPassport==true? @color/colorSelected:@color/textBlack}"
+                    app:layout_constraintEnd_toEndOf="@+id/viewBack"
+                    app:layout_constraintStart_toStartOf="@+id/viewBack"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/viewBack"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:background="@{selectedPassport==true? @color/colorSelected:@color/textBlack}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/viewFront"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBack" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPassport"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_green_fill"
+                android:padding="@dimen/_30sp"
+                android:src="@drawable/ic_passport_front"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consPages" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAddressProof"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:text="@string/address_proof"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPassport" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consAddressProof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddressProof">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFrontProof"
+                    style="@style/Text.Bold.Medium.Black.Brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:gravity="center"
+                    android:text="@string/front_page"
+                    android:onClick="@{()->view.onClickChangeAddressColor()}"
+                    android:textColor="@{selectedAddress==true? @color/textBlack:@color/colorSelected}"
+                    app:layout_constraintEnd_toEndOf="@+id/viewFrontProof"
+                    app:layout_constraintStart_toStartOf="@+id/viewFrontProof"
+
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/viewFrontProof"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:onClick="@{()->view.onClickChangeAddressColor()}"
+                    android:background="@{selectedAddress==true? @color/textBlack:@color/colorSelected}"
+                    app:layout_constraintEnd_toStartOf="@+id/viewBackProof"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFrontProof" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBackProof"
+                    style="@style/Text.Bold.Medium.Black.Brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/back_page"
+                    android:onClick="@{()->view.onClickChangeAddressColor()}"
+                    android:textColor="@{selectedAddress==true? @color/colorSelected:@color/textBlack}"
+                    app:layout_constraintEnd_toEndOf="@+id/viewBackProof"
+                    app:layout_constraintStart_toStartOf="@+id/viewBackProof"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/viewBackProof"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:onClick="@{()->view.onClickChangeAddressColor()}"
+                    android:background="@{selectedAddress==true? @color/colorSelected:@color/textBlack}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/viewFrontProof"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBackProof" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAddressProof"
+                    android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_circle_orange_fill"
+                android:padding="@dimen/_30sp"
+                android:src="@drawable/ic_address_proof"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consAddressProof" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnUpload"
+                style="@style/CurvedButton"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/login_button_green_fill"
+                android:singleLine="true"
+                android:text="@string/upload"
+                android:onClick="@{()->view.onClickNavigation()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivAddressProof" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbConfirm"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnUpload"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:checked="true"
+                android:background="@color/white"
+                android:buttonTint="@color/colorSelected"
+                android:layout_marginBottom="@dimen/_32sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="@dimen/_24sdp"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvConfirm"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/confirm_id"
+                app:layout_constraintStart_toEndOf="@+id/cbConfirm"
+                app:layout_constraintTop_toTopOf="@+id/cbConfirm"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbConfirm"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

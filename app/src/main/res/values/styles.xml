@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>-->
+    </style>
+    <style name="Text.Bold.Brown" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/brown_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Text.Bold.Small.Brown" parent="Text.Bold.Brown">
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <style name="Text.Bold.Medium.Brown" parent="Text.Bold.Brown">
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="Text.Bold.Large.Brown" parent="Text.Bold.Brown">
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+    // Text Bold-Robot-BlackColor
+
+    <style name="Text.Bold.Small.Black.Brown" parent="Text.Bold.Small.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    <style name="Text.Bold.Medium.Black.Brown" parent="Text.Bold.Medium.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    <style name="Text.Bold.Large.Black.Brown" parent="Text.Bold.Large.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    <style name="Text.Bold.xLarge.Black.Brown" parent="Text.Bold.Large.Brown">
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+
+    // Text Bold-Brown-WhiteColor
+
+    <style name="Text.Bold.xSmall.Black.Brown" parent="Text.Bold.Small.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="Text.Bold.Small.White.Brown" parent="Text.Bold.Small.Brown">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Bold.Medium.White.Brown" parent="Text.Bold.Medium.Brown">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Bold.Large.White.Brown" parent="Text.Bold.Large.Brown">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Bold.xLarge.White.Brown" parent="Text.Bold.Large.Brown">
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="Text.Regular.Brown" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/brown_light</item>
+    </style>
+
+    <style name="Text.Regular.Small.Brown" parent="Text.Regular.Brown">
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <style name="Text.Regular.Medium.Brown" parent="Text.Regular.Brown">
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="Text.Regular.Large.Brown" parent="Text.Regular.Brown">
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+
+    // Text Bold-Brown-BlackColor
+
+    <style name="Text.Regular.xSmall.Black.Brown" parent="Text.Regular.Small.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="Text.Regular.Small.Black.Brown" parent="Text.Regular.Small.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    <style name="Text.Regular.Medium.Black.Brown" parent="Text.Regular.Medium.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    <style name="Text.Regular.Large.Black.Brown" parent="Text.Regular.Large.Brown">
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    <style name="Text.Regular.xLarge.Black.Brown" parent="Text.Regular.Large.Brown">
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    // Text Light-Robot-WhiteColor
+
+    <style name="Text.Regular.Small.White.Brown" parent="Text.Regular.Small.Brown">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Regular.Medium.White.Brown" parent="Text.Regular.Medium.Brown">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Regular.Large.White.Brown" parent="Text.Regular.Large.Brown">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CurvedButton" parent="Text.Bold.Large.White.Brown">
+        <item name="android:layout_width">@dimen/standard_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="background">@drawable/bg_green_curved_fill</item>
+        <item name="android:paddingStart">@dimen/_16sdp</item>
+        <item name="android:paddingEnd">@dimen/_16sdp</item>
+        <item name="android:paddingTop">@dimen/_12sdp</item>
+        <item name="android:paddingBottom">@dimen/_12sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="textAllCaps">true</item>
+
+    </style>
+
+        <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/bgGrey</item>
+        <item name="colorControlActivated">@color/orange</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Spinner.Underlined">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorPrimary">#673AB7</item>
+        <item name="itemTextColor">#673AB7</item>
+        <item name="android:fontFamily">Text.Regular.Small.White.Brown</item>
+    </style>
+    <style name="Spinner_total_glow" >
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/brown_light</item>
+    </style>
+    <style name="Spinner_flexible" >
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/brown_light</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+    <style name="shapableImage" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+</resources>

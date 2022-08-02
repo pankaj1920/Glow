@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "272622142768",
+    "firebase_url": "https://uglow-86aad.firebaseio.com",
+    "project_id": "uglow-86aad",
+    "storage_bucket": "uglow-86aad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272622142768:android:c0101e4440adb1f7c374f5",
+        "android_client_info": {
+          "package_name": "com.developer.u_glow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272622142768-7rvrafh8jlt9245qg14dpdeq4kh5el5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.developer.u_glow",
+            "certificate_hash": "ecb3bce6ae4d8596969fd3efb3672e3267a654aa"
+          }
+        },
+        {
+          "client_id": "272622142768-6k9ubog4pil5rkum0a7p0m5qau4qs7ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPgvLMLdBKSE4n4xiH8VZI7n5IEd1tMBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272622142768-6k9ubog4pil5rkum0a7p0m5qau4qs7ap.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "272622142768-fslnenkl57vs1igm3m9nom76ec1i32q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.isoftinc.uglow"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

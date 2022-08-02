@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_24sdp"
+        android:background="@drawable/bg_rectangle_curve_green_fill"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/tvHeading"
+            android:text="Choose Below Option"
+            style="@style/Text.Bold.xLarge.White.Brown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/tvEnterEmail"
+            android:text="@string/to_add_images_of_your_work"
+            style="@style/Text.Regular.Large.White.Brown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeading"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/CurvedButton"
+            android:background="@drawable/bg_white_curved_fill"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:textColor="@color/green"
+            android:text="Capture"
+            android:id="@+id/btnCapture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEnterEmail"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/CurvedButton"
+            android:background="@drawable/bg_white_curved_outline"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:text="Gallery"
+            android:id="@+id/btnGallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCapture"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

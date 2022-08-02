@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+    <variable
+        name="select"
+        type="boolean"/>
+    <variable
+        name="view"
+        type="com.developer.u_glow.adapter.viewholder.SelectSubServiceListViewHolder" />
+</data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:background="@drawable/bg_curve_white"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="@string/eyebrow_wax"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/standard_0"
+            style="@style/Text.Regular.Medium.Black.Brown"
+            android:drawablePadding="@dimen/_8sdp"
+            android:onClick="@{()->view.onClickSelect()}"
+            android:drawableStart="@{select? @drawable/bg_circle_grey_fill: @drawable/bg_circle_pink_fill}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

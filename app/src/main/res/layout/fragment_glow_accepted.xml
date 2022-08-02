@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.booking.GlowAcceptedFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        tools:context=".view.fragment.booking.GlowAcceptedFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_24sdp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCongrats"
+                style="@style/Text.Bold.xLarge.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:maxLines="1"
+                android:text="@string/cong"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/detailsText"
+                style="@style/Text.Regular.Medium.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:text="@string/glow_accepted"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCongrats" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardPaymentDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/bg_curve_white"
+                app:layout_constraintBottom_toTopOf="@+id/btnYes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsText">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBgGreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_green_right_radius"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHeading"
+                    style="@style/Text.Bold.xLarge.Black.Brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/eyebrow_wax"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvId"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/numbers"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consDateAndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvHeading"
+                    app:layout_constraintStart_toStartOf="@+id/tvHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/tvId">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDate"
+                        style="@style/Text.Regular.Small.Black.Brown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_grey_curved_fill"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingVertical="@dimen/_2sdp"
+                        android:singleLine="true"
+                        android:text="@string/date"
+                        app:layout_constraintEnd_toStartOf="@+id/tvTime"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTime"
+                        style="@style/Text.Regular.Small.Black.Brown"
+                        android:layout_width="@dimen/standard_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:background="@drawable/bg_grey_curved_fill"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingVertical="@dimen/_2sdp"
+                        android:text="@string/_2pm"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvDate"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_default="wrap" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAmount"
+                    style="@style/Text.Bold.xLarge.Black.Brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:singleLine="true"
+                    android:text="@string/_260"
+                    android:textSize="@dimen/_50sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/consDateAndTime" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnYes"
+                style="@style/CurvedButton"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/bg_oval_white_fill"
+                android:maxLines="2"
+                android:onClick="@{()->view.onClickNavigation()}"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/booking_to_calendar"
+                android:textColor="#13c6b8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardPaymentDetails" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

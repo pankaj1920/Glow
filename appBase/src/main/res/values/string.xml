@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera">Camera</string>
+    <string name="enable_storage">Please Enable the Camera and Storage permission to upload the profile pic.</string>
+    <string name="folder">Folder</string>
+    <string name="tap_to_select">Tap to Select</string>
+    <string name="done">Done</string>
+</resources>

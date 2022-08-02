@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.authenticate.RegisterThreeFragment" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_16sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHeading"
+        style="@style/Text.Bold.xLarge.Black.Brown"
+        android:layout_width="@dimen/standard_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:text="@string/congratulations"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAddress"
+        style="@style/Text.Regular.Medium.Black.Brown"
+        android:gravity="center"
+        android:layout_width="@dimen/standard_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:singleLine="true"
+        android:text="@string/your_account_setup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnConfirmAccount"
+        style="@style/CurvedButton"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@drawable/bg_green_curved_outline"
+        android:singleLine="true"
+        android:text="@string/confirm_account"
+        android:onClick="@{()->view.onClickConfirmAccount()}"
+        android:textColor="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnDashboard"
+        style="@style/CurvedButton"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_green_curved_fill"
+        android:singleLine="true"
+        android:text="@string/dashboard"
+        android:onClick="@{()->view.onClickDashboard()}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfirmAccount" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

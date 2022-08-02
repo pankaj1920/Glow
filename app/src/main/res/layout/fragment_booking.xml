@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="int" />
+
+        <import type="com.developer.u_glow.util.Constants" />
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.booking.BookingFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_24sdp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etSearch"
+                style="@style/Text.Regular.Large.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:drawableEnd="@drawable/ic_search"
+                android:drawablePadding="@dimen/_8sdp"
+                android:background="@drawable/bg_white_curved_fill"
+                android:gravity="center_vertical"
+                android:hint="@string/search"
+                android:textColorHint="@color/textBlack"
+                android:paddingHorizontal="@dimen/_16sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBooking"
+                style="@style/Text.Bold.xLarge.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:text="@string/heading_your_open_bookings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSearch" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCheckGlow"
+                style="@style/Text.Regular.Medium.White.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:text="@string/your_upcoming_booked_glows"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBooking" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOpen"
+                style="@style/Text.Bold.Medium.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:onClick="@{()->view.onClickOption(Constants.Count.zero)}"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:text="@string/open"
+                android:textColor="@{position == Constants.Count.zero ? @color/white : @color/textGreyUnselected}"
+                app:layout_constraintEnd_toStartOf="@+id/tvUpcoming"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCheckGlow" />
+
+            <View
+                android:id="@+id/viewOpen"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:onClick="@{()->view.onClickOption(Constants.Count.zero)}"
+                android:background="@{position == Constants.Count.zero ? @color/white : @color/textGreyUnselected}"
+                app:layout_constraintEnd_toEndOf="@+id/tvOpen"
+                app:layout_constraintStart_toStartOf="@+id/tvOpen"
+                app:layout_constraintTop_toBottomOf="@+id/tvOpen" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUpcoming"
+                style="@style/Text.Bold.Medium.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:onClick="@{()->view.onClickOption(Constants.Count.one)}"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:text="@string/upcoming"
+                android:textColor="@{position == Constants.Count.one ? @color/white : @color/textGreyUnselected}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvOpen"
+                app:layout_constraintEnd_toStartOf="@+id/tvCompleted"
+                app:layout_constraintStart_toEndOf="@+id/tvOpen"
+                app:layout_constraintTop_toTopOf="@+id/tvOpen" />
+
+            <View
+                android:id="@+id/viewUpcoming"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:onClick="@{()->view.onClickOption(Constants.Count.one)}"
+                android:background="@{position == Constants.Count.one ? @color/white : @color/textGreyUnselected}"
+                app:layout_constraintEnd_toEndOf="@+id/tvUpcoming"
+                app:layout_constraintStart_toStartOf="@+id/tvUpcoming"
+                app:layout_constraintTop_toBottomOf="@+id/tvUpcoming" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCompleted"
+                style="@style/Text.Bold.Medium.White.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:onClick="@{()->view.onClickOption(Constants.Count.two)}"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:text="@string/completed"
+                android:textColor="@{position == Constants.Count.two ? @color/white : @color/textGreyUnselected}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvOpen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvUpcoming"
+                app:layout_constraintTop_toTopOf="@+id/tvOpen" />
+
+            <View
+                android:id="@+id/viewCompleted"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:onClick="@{()->view.onClickOption(Constants.Count.two)}"
+                android:background="@{position == Constants.Count.two ? @color/white : @color/textGreyUnselected}"
+                app:layout_constraintEnd_toEndOf="@+id/tvCompleted"
+                app:layout_constraintStart_toStartOf="@+id/tvCompleted"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompleted" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:paddingHorizontal="@dimen/_16sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCompleted"
+                tools:itemCount="1"
+                tools:listitem="@layout/inflate_booking" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnLoadMore"
+                style="@style/CurvedButton"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_white_curved_outline"
+                android:text="@string/load_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvBooking" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnPost"
+                style="@style/CurvedButton"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_white_curved_fill"
+                android:text="@string/post_a_new_glow"
+                android:textColor="@color/orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnLoadMore"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

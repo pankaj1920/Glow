@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_pro"
+    app:startDestination="@id/nav_dashboard_pro_fragment">
+
+    <fragment
+        android:id="@+id/nav_dashboard_pro_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.DashboardProFragment"
+        android:label="Dashboard_Pro"
+        tools:layout="@layout/fragment_dashboard_pro" />
+
+    <fragment
+        android:id="@+id/nav_open_glow_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.OpenGlowFragment"
+        android:label="Open_Glow"
+        tools:layout="@layout/fragment_open_glow" />
+
+    <fragment
+        android:id="@+id/nav_make_offer_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.MakeOfferFragment"
+        android:label="Make_Offers"
+        tools:layout="@layout/fragment_make_offers" />
+
+    <fragment
+        android:id="@+id/nav_glow_accept_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.GlowAcceptedFragment"
+        android:label="Glow_Accept"
+        tools:layout="@layout/fragment_glow_accepted" />
+
+    <fragment
+        android:id="@+id/nav_glow_decline_fragment"
+        android:name="com.developer.u_glow.view.fragment.booking.GlowDeclineFragment"
+        android:label="Glow_Decline"
+        tools:layout="@layout/fragment_glow_decline" />
+
+    <fragment
+        android:id="@+id/nav_profile_fragment"
+        android:name="com.developer.u_glow.view.fragment.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_service_fragment"
+        android:name="com.developer.u_glow.view.fragment.profile.SelectServiceFragment"
+        android:label="Service"
+        tools:layout="@layout/fragment_select_service" />
+    <fragment
+        android:id="@+id/selectServiceFragment3"
+        android:name="com.developer.u_glow.view.fragment.profile.SelectServiceFragment"
+        android:label="SelectServiceFragment">
+        <action
+            android:id="@+id/action_selectServiceFragment3_to_settingPassportFragment"
+            app:destination="@id/settingPassportFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingProFragment2"
+        android:name="com.developer.u_glow.view.fragment.settings.SettingProFragment"
+        android:label="SettingProFragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_gallery_fragment"
+        android:name="com.developer.u_glow.view.fragment.profile.GalleryFragment"
+        android:label="Gallery" />
+    <fragment
+        android:id="@+id/nav_edit_profile_pro_fragment"
+        android:name="com.developer.u_glow.view.fragment.profile.EditProfileProFragment"
+        android:label="EditProfilePro" />
+    <fragment
+        android:id="@+id/nav_about_fragment"
+        android:name="com.developer.u_glow.view.fragment.page.AboutUsFragment"
+        android:label="About" />
+
+    <fragment
+        android:id="@+id/nav_contact_fragment"
+        android:name="com.developer.u_glow.view.fragment.page.ContactUsFragment"
+        android:label="Contact" />
+
+    <fragment
+        android:id="@+id/nav_faq_fragment"
+        android:name="com.developer.u_glow.view.fragment.page.FaqFragment"
+        android:label="Faq" />
+
+    <fragment
+        android:id="@+id/settingPassportFragment"
+        android:name="com.developer.u_glow.view.fragment.settings.SettingPassportFragment"
+        android:label="SettingPassportFragment"/>
+
+    <fragment
+        android:id="@+id/nav_add_qualification"
+        android:name="com.developer.u_glow.view.fragment.profile.AddQualificationFragment"
+        android:label="AddQualification" />
+
+    <fragment
+        android:id="@+id/nav_analytics_fragment"
+        android:name="com.developer.u_glow.view.fragment.analytics.AnalyticsFragment"
+        android:label="Analytics" />
+
+    <fragment
+        android:id="@+id/nav_notification_pro_fragment"
+        android:name="com.developer.u_glow.view.fragment.notification.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/nav_setting_pro_fragment"
+        android:name="com.developer.u_glow.view.fragment.settings.SettingProFragment"
+        android:label="Setting_Pro"
+        tools:layout="@layout/fragment_setting_pro" />
+
+    <fragment
+        android:id="@+id/nav_setting_passport_pro_fragment"
+        android:name="com.developer.u_glow.view.fragment.settings.SettingPassportFragment"
+        android:label="Setting_Passport_Pro"
+        tools:layout="@layout/fragment_setting_passport" />
+
+
+</navigation>

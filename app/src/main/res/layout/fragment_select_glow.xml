@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="id"
+            type="int" />
+<!--        <variable-->
+<!--            name="position"-->
+<!--            type="int" />-->
+        <variable
+            name="position"
+            type="java.util.List&lt;com.developer.u_glow.model.dto.PositionData&gt;"/>
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.booking.SelectGlowFragment" />
+        <variable
+            name="viewModel"
+            type="com.developer.u_glow.viewmodel.booking.SelectGlowViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.booking.SelectGlowFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCancel"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/ic_ellipse_black"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGlowSelect"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/select_your_glow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPickUrNeed"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/pick_what_you_need"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGlowSelect" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSelectGlow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPickUrNeed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNotWhatYouLooking"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:text="@string/not_what_you_looking"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvSelectGlow" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cardEnterDetailsWant"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_curved_grey_fill"
+                android:gravity="top"
+                android:hint="@string/enter_details_you_want"
+                android:padding="@dimen/_10sdp"
+                android:scrollbars="vertical"
+                android:scrollbarStyle="insideInset"
+                android:overScrollMode="always"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="false"
+                android:textColorHint="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNotWhatYouLooking" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNeedAnything"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:text="@string/need_anything_else"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardEnterDetailsWant" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtClickButton"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/click_button_below"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNeedAnything" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/consAddService"
+                style="@style/Text.Regular.Large.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_curved_grey_border"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_14sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/standard_0"
+                android:text="@string/add_service"
+                android:onClick="@{()->view.onClickNavigationBack(id)}"
+                app:drawableStartCompat="@drawable/bg_circle_grey_fill"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtClickButton" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAddService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consAddService" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/bg_curve_orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvAddService">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_32sdp"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPost"
+                        style="@style/Text.Regular.Medium.White.Brown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:gravity="center"
+                        android:text="@string/post_your_track"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnNext"
+                        style="@style/CurvedButton"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:background="@drawable/button_fill_orange_with_outline"
+                        android:singleLine="true"
+                        android:text="@string/next"
+                        android:onClick="@{()->view.onClickNavigation()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPost" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

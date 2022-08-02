@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Studio/U_GLOW/uglow/app/src/main/res/layout/alert_forgot_password.xml" value="0.209375" />
+        <entry key="..\:/Android Studio/U_GLOW/uglow/appBase/src/main/res/layout/loader.xml" value="0.209375" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/drawable/bg_green_curved_fill.xml" value="0.165234375" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/drawable/ic_email.xml" value="0.165234375" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/drawable/ic_password.xml" value="0.165234375" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/drawable/ic_pro.xml" value="0.165234375" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/drawable/ic_profile.xml" value="0.165234375" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/layout/fragment_register_one.xml" value="0.22" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/layout/fragment_register_three.xml" value="0.153125" />
+        <entry key="..\:/Lathesh/U-Glow/uglow_android/app/src/main/res/layout/fragment_register_two.xml" value="0.153125" />
+        <entry key="app/src/main/res/drawable/bg_card.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_circle_grey_fill.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_curve_card_white.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_curve_white_border.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_curve_white_day.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_curve_white_offers.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_curved_grey_border.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_curved_grey_fill.xml" value="0.116" />
+        <entry key="app/src/main/res/drawable/bg_green_curved_fill.xml" value="0.116" />
+        <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.17407407407407408" />
+        <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/inflate_select_service.xml" value="0.19739583333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="FindBugsConfigurable">
+    <option name="make" value="true" />
+    <option name="effort" value="default" />
+    <option name="priority" value="Medium" />
+    <option name="excludeFilter" value="" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="SuppressionsComponent">
+    <option name="suppComments" value="[]" />
+  </component>
+</project>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.settings.SettingProFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.settings.SettingProFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSetting"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/settingSmall"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtUpdateDetail"
+                style="@style/Text.Regular.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:singleLine="true"
+                android:text="@string/details_below"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSetting" />
+
+
+            <View
+                android:id="@+id/viewDetail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/green"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateDetail" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRadius"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:singleLine="true"
+                android:text="@string/working_radius"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@+id/spinnerRadius"
+                app:layout_constraintTop_toBottomOf="@+id/viewDetail" />
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/bg_spinner_setting"
+                android:entries="@array/radius"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:theme="@style/Spinner_total_glow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtRadius" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/bg_curve_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerRadius">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAvailable"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/your_available"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelect"
+                    style="@style/Text.Regular.Medium.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/select_from_below"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAvailable" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSelect" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:background="@drawable/bg_curve_orange"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvDay">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBankDetail"
+                        style="@style/Text.Bold.xLarge.White.Brown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/bank_details"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEnterDetail"
+                        style="@style/Text.Regular.Medium.White.Brown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/enter_bank_detail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBankDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCommision"
+                        style="@style/Text.Regular.Medium.White.Brown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/uglow_commision"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvEnterDetail" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/evIban"
+                        style="@style/Text.Regular.Medium.Black.Brown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:background="@drawable/bg_curve_white"
+                        android:hint="@string/iban"
+                        android:singleLine="true"
+                        android:inputType="textMultiLine"
+                        android:isScrollContainer="false"
+                        android:padding="@dimen/_10sdp"
+                        android:textColorHint="@color/textBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCommision" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/evBic"
+                        style="@style/Text.Regular.Medium.Black.Brown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/bg_curve_white"
+                        android:gravity="top"
+                        android:hint="@string/bic"
+                        android:singleLine="true"
+                        android:inputType="textMultiLine"
+                        android:isScrollContainer="false"
+                        android:padding="@dimen/_10sdp"
+                        android:textColorHint="@color/textBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/evIban" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtValidate"
+                        style="@style/Text.Regular.Medium.White.Brown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:text="@string/validate_profile"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toStartOf="@+id/tvValidate"
+                        app:layout_constraintTop_toBottomOf="@+id/evBic" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvValidate"
+                        style="@style/Text.Regular.Medium.Black.Brown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/bg_curve_white"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/click_here"
+                        android:textColorHint="@color/textBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtValidate" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnUpdate"
+                        style="@style/CurvedButton"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:background="@drawable/bg_oval_white_fill"
+                        android:singleLine="true"
+                        android:text="@string/updated_details"
+                        android:onClick="@{()->view.onClickNavigation()}"
+                        android:textColor="@color/orange"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvValidate" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:paddingBottom="@dimen/_24sdp"
+                        android:background="@drawable/bg_half_curved_white_fill"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnUpdate">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvHavingTrouble"
+                            style="@style/Text.Bold.xLarge.Black.Brown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_32sdp"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/having_trouble"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtGetInTouch"
+                            style="@style/Text.Regular.Brown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:text="@string/get_in_touch_issue"
+                            android:textAlignment="center"
+                            android:singleLine="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvHavingTrouble" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btnGetIntouch"
+                            style="@style/CurvedButton"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:background="@drawable/login_button_green_fill"
+                            android:singleLine="true"
+                            android:text="@string/get_in_touch"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtGetInTouch" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDeleteAccount"
+                            style="@style/Text.Bold.Small.Black.Brown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:letterSpacing="0.2"
+                            android:text="@string/delete_account"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/btnGetIntouch" />
+
+                       <!-- <View
+                            android:layout_width="@dimen/_110sdp"
+                            android:layout_height="@dimen/standard_1"
+                            android:layout_marginBottom="@dimen/_32sdp"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/tvDeleteAccount"
+                            app:layout_constraintStart_toStartOf="@+id/tvDeleteAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDeleteAccount" />-->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.booking.DashboardProFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_0"
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/clCompleteProfile">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMonthEarning"
+                        style="@style/Text.Regular.Medium.White.Brown"
+                        android:layout_width="@dimen/standard_0"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/june_earnings"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAmount"
+                        style="@style/Text.Bold.xLarge.White.Brown"
+                        android:layout_width="@dimen/standard_0"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/dummy_amount"
+                        android:textSize="@dimen/sp_40"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMonthEarning" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNextPayout"
+                        style="@style/Text.Regular.Large.White.Brown"
+                        android:layout_width="@dimen/standard_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/next_payout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAmount" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clAmount"
+                    app:spanCount="2"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/inflate_options" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:background="@drawable/bg_curve_top_green"
+                    android:paddingTop="@dimen/_16sdp"
+                    android:id="@+id/clNotification"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvOptions">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNotification"
+                        style="@style/Text.Bold.xLarge.White.Brown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:text="@string/notifications"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvNotification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNotification"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/inflate_notification" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSeeAll"
+                        style="@style/CurvedButton"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:background="@drawable/bg_white_curved_fill"
+                        android:singleLine="true"
+                        android:text="@string/see_all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintEnd_toEndOf="@+id/rvNotification"
+                        app:layout_constraintStart_toStartOf="@+id/rvNotification"
+                        app:layout_constraintTop_toBottomOf="@+id/rvNotification" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:background="@drawable/bg_curve_top_orange"
+                        android:padding="@dimen/_16sdp"
+                        android:id="@+id/clBooking"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSeeAll">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvViewBooking"
+                            style="@style/Text.Bold.xLarge.White.Brown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_32sdp"
+                            android:text="@string/nav_bookings"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvUpcoming"
+                            style="@style/Text.Regular.Medium.White.Brown"
+                            android:layout_width="@dimen/standard_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:gravity="center"
+                            android:text="@string/see_overview_upcoming_bookings"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvViewBooking" />
+
+
+                        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                            android:id="@+id/calendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:mcv_dateTextAppearance="@style/Text.Regular.Medium.White.Brown"
+                            app:mcv_headerTextAppearance="@style/Text.Regular.Medium.Black.Brown"
+                            app:mcv_weekDayTextAppearance="@style/Text.Bold.Medium.White.Brown"
+                            app:mcv_selectionMode="none"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:mcv_selectionColor="@color/black"
+                            app:mcv_firstDayOfWeek="monday"
+                            app:mcv_weekDayLabels="@array/custom_weekdays"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvUpcoming"/>
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/clCompleteProfile"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_24sdp"
+            android:background="@color/bgGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:id="@+id/ivInfo"
+                android:src="@drawable/ic_info_red"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvProfileHeading"
+                android:text="@string/complete_your_profile"
+                app:layout_constraintStart_toEndOf="@+id/ivInfo"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintTop_toTopOf="@+id/ivInfo"
+                style="@style/Text.Bold.Medium.Black.Brown"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvProfileDesc"
+                android:onClick="@{()->view.onClickProfile()}"
+                app:layout_constraintStart_toEndOf="@+id/ivInfo"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/complete_profile_bid"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileHeading"
+                style="@style/Text.Regular.Small.Black.Brown"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

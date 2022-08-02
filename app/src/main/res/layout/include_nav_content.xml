@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.activity.home.HomeActivity" />
+
+        <import type="com.developer.u_glow.util.Constants"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:onClick="@{()->view.onClickCloseDrawer()}"
+            android:src="@drawable/ic_close_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fillViewport="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivClose">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_24sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDashboard"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    android:text="@string/nav_dashboard"
+                    android:onClick="@{()->view.onClickNavigationMenu(Constants.Count.zero)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vDashboard"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/vDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDashboard" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOffers"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    android:text="@string/nav_offers"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vOffer"
+                    app:layout_constraintTop_toBottomOf="@+id/vDashboard" />
+
+                <View
+                    android:id="@+id/vOffer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvOffers" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvContact"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    android:text="@string/nav_contact"
+                    android:onClick="@{()->view.onClickNavigationMenu(Constants.Count.two)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vContact"
+                    app:layout_constraintTop_toBottomOf="@+id/vOffer" />
+
+                <View
+                    android:id="@+id/vContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvContact" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBooking"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    android:text="@string/nav_bookings"
+                    android:onClick="@{()->view.onClickNavigationMenu(Constants.Count.three)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vBooking"
+                    app:layout_constraintTop_toBottomOf="@+id/vContact" />
+
+                <View
+                    android:id="@+id/vBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBooking" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAbout"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->view.onClickNavigationMenu(Constants.Count.four)}"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    android:text="@string/nav_about"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vBooking"
+                    app:layout_constraintTop_toBottomOf="@+id/vBooking" />
+
+                <View
+                    android:id="@+id/vAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAbout" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFaq"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    android:text="@string/nav_faq"
+                    android:onClick="@{()->view.onClickNavigationMenu(Constants.Count.five)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vBooking"
+                    app:layout_constraintTop_toBottomOf="@+id/vAbout" />
+
+                <View
+                    android:id="@+id/vFaq"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFaq" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrivacy"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_16sdp"
+                    android:text="@string/nav_privacy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vBooking"
+                    app:layout_constraintTop_toBottomOf="@+id/vFaq" />
+
+                <View
+                    android:id="@+id/vPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPrivacy" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_60sdp"
+                    app:layout_constraintTop_toBottomOf="@id/vPrivacy"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

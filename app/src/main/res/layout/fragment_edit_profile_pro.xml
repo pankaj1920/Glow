@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.profile.EditProfileProFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.profile.EditProfileProFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtName"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:maxLines="2"
+                android:text="@string/cloud_beauty"
+                app:layout_constraintEnd_toStartOf="@+id/ivProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivProfile" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/consRating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:numStars="5"
+                android:progressTint="@color/orange"
+                android:rating="5"
+                android:stepSize="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtYourProfile"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:maxLines="1"
+                android:text="@string/parlour_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consRating" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="@dimen/_95dp"
+                android:layout_height="@dimen/_95dp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/user_image"
+                android:contentDescription="@string/todo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:background="@drawable/bg_oval_pink"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintBottom_toBottomOf="@+id/ivProfile"
+                app:layout_constraintEnd_toEndOf="@+id/ivProfile"
+                app:layout_constraintStart_toStartOf="@+id/ivProfile"
+                app:layout_constraintTop_toTopOf="@+id/ivProfile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnEditDetail"
+                style="@style/CurvedButton"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:background="@drawable/bg_orange_curved_outline"
+                android:singleLine="true"
+                android:text="@string/edit_details"
+                android:onClick="@{()->view.onClickDetails()}"
+                android:textColor="@color/orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAbout"
+                style="@style/Text.Bold.Large.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:maxLines="1"
+                android:text="@string/nav_about"
+                app:layout_constraintEnd_toStartOf="@+id/ivProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEditDetail" />
+
+            <View
+                android:id="@+id/viewDetail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/green"
+                app:layout_constraintTop_toBottomOf="@+id/txtAbout" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAboutDescription"
+                style="@style/Text.Regular.Small.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:gravity="start"
+                android:text="@string/dummy_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewDetail" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnEditBio"
+                style="@style/CurvedButton"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/button_green_empty"
+                android:singleLine="true"
+                android:text="@string/edit_bio"
+                android:onClick="@{()->view.onClickDetails()}"
+                android:textColor="@color/buttonColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAboutDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtQualification"
+                style="@style/Text.Bold.Large.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:maxLines="1"
+                android:text="@string/label_qualification"
+                app:layout_constraintEnd_toStartOf="@+id/ivProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEditBio" />
+
+            <View
+                android:id="@+id/viewQualification"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/dBgGrey"
+                app:layout_constraintTop_toBottomOf="@+id/txtQualification" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtQualificationDescription"
+                style="@style/Text.Regular.Small.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:gravity="start"
+                android:text="@string/dummy_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewQualification" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnEditQualification"
+                style="@style/CurvedButton"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/button_gray_fill"
+                android:singleLine="true"
+                android:text="@string/edit_qualification"
+                android:onClick="@{()->view.onClickQualification()}"
+                android:textColor="@color/dBgGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtQualificationDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvExperience"
+                style="@style/Text.Bold.Large.Black.Brown"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:maxLines="1"
+                android:text="@string/label_experience"
+                app:layout_constraintEnd_toStartOf="@+id/ivProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEditQualification" />
+
+            <View
+                android:id="@+id/viewExperience"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/orange"
+                app:layout_constraintTop_toBottomOf="@+id/tvExperience" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtExperienceDescription"
+                style="@style/Text.Regular.Small.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:gravity="start"
+                android:text="@string/dummy_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewExperience" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnExperience"
+                style="@style/CurvedButton"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:background="@drawable/bg_orange_curved_outline"
+                android:singleLine="true"
+                android:text="@string/edit_experience"
+                android:textColor="@color/orange"
+                android:onClick="@{()->view.onClickDetails()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtExperienceDescription" />
+
+
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="@dimen/standard_0"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/btnExperience"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_sample"
+                    android:id="@+id/ivGallery"
+                    app:layout_constraintDimensionRatio="w,2:3"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnEditGallery"
+                    style="@style/CurvedButton"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/bg_white_curved_outline"
+                    android:singleLine="true"
+                    android:text="@string/edit_gallery"
+                    android:onClick="@{()->view.onClickGallery()}"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivGallery"
+                    app:layout_constraintEnd_toEndOf="@+id/ivGallery"
+                    app:layout_constraintStart_toStartOf="@+id/ivGallery"
+                    app:layout_constraintTop_toTopOf="@+id/ivGallery" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnSaveChanges"
+                style="@style/CurvedButton"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/login_button_green_fill"
+                android:singleLine="true"
+                android:text="@string/save_changes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivGallery" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/bg_curve_orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSaveChanges"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReviewHeader"
+                    style="@style/Text.Bold.xLarge.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/review_edit_profile"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReviewDetails"
+                    style="@style/Text.Regular.Medium.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/see_review"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReviewHeader" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReviewDetails" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLoadMoreDashBoardProfile"
+                    style="@style/CurvedButton"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginBottom="@dimen/_32sdp"
+                    android:background="@drawable/button_fill_orange_with_outline"
+                    android:singleLine="true"
+                    android:text="@string/loadMore"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvEditProfile" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

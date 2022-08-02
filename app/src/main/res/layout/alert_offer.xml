@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_16sdp"
+    android:paddingTop="@dimen/_16sdp"
+    android:paddingBottom="@dimen/_24sdp"
+    android:background="@drawable/bg_rectangle_curve_green_fill">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="@dimen/standard_0"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/tvHeading"
+        android:text="@string/you_have_made_offer"
+        style="@style/Text.Bold.xLarge.White.Brown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        style="@style/Text.Regular.Small.Black.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/bg_white_curved_fill"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        android:text="Mon 12/12/2020"
+        android:textColor="@color/textGrey"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@+id/tvTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        style="@style/Text.Regular.Small.Black.Brown"
+        android:layout_width="@dimen/standard_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:background="@drawable/bg_white_curved_fill"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        android:text="2PM"
+        android:textColor="@color/textGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".0"
+        app:layout_constraintStart_toEndOf="@+id/tvDate"
+        app:layout_constraintTop_toTopOf="@+id/tvDate"
+        app:layout_constraintWidth_default="wrap" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="@dimen/standard_0"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/tvAmount"
+        android:text="$260"
+        android:layout_marginTop="@dimen/_16sdp"
+        style="@style/Text.Bold.xLarge.White.Brown"
+        android:textSize="@dimen/sp_40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/CurvedButton"
+        android:background="@drawable/bg_white_curved_fill"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:textColor="@color/green"
+        android:text="@string/close"
+        android:id="@+id/btnClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAmount"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

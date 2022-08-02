@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_24sdp"
+        android:background="@drawable/bg_rectangle_curve_green_fill"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/tvHeading"
+            android:text="@string/item_is_already_added"
+            style="@style/Text.Bold.xLarge.White.Brown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/CurvedButton"
+            android:background="@drawable/bg_white_curved_fill"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:textColor="@color/green"
+            android:text="@string/remove_added_item"
+            android:id="@+id/btnRemove"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeading"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/CurvedButton"
+            android:background="@drawable/bg_white_curved_outline"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:text="@string/add_more_item"
+            android:id="@+id/btnAdd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRemove"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

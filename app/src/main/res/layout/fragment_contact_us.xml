@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="view"
+        type="com.developer.u_glow.view.fragment.page.ContactUsFragment" />
+</data>
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/chartColor"
+        tools:context=".view.fragment.ContactUsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvContactUs"
+                style="@style/Text.Bold.xLarge.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/contact_us"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtConcern"
+                style="@style/Text.Regular.Medium.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:maxLines="1"
+                android:text="@string/your_concern"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvContactUs" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerGlowTotal"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/bg_spiiner_contact_us"
+                android:entries="@array/spinner_contact"
+                android:gravity="start"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:theme="@style/Spinner_total_glow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtConcern" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtMessage"
+                style="@style/Text.Regular.Medium.White.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:maxLines="1"
+                android:text="@string/your_message"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerGlowTotal" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/evMessage"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/bg_curve_white"
+                android:gravity="top"
+                android:hint="@string/enter_message"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="false"
+                android:overScrollMode="always"
+                android:padding="@dimen/_8sdp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textColorHint="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMessage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnNext"
+                style="@style/CurvedButton"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginBottom="@dimen/_32sdp"
+                android:background="@drawable/bg_oval_white_fill"
+                android:text="@string/submit_message"
+                android:onClick="@{()->view.onClickNavigation()}"
+                android:textColor="@color/chartColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/evMessage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.activity.authenticate.RegisterActivity" />
+        
+        <import type="com.developer.u_glow.util.Constants"/>
+    </data>
+    
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_login_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_uglow"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/standard_0"
+        android:id="@+id/svParent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/ivHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_16sdp">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fvRegister"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                app:navGraph="@navigation/nav_register"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStepOne"
+                style="@style/Text.Bold.Medium.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/step_one"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:onClick="@{()->view.onClickStep(Constants.Count.zero)}"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:textColor="@{Constants.Count.zero == position ?  @color/textBlack : @color/unSelectGrey}"
+                app:layout_constraintEnd_toStartOf="@+id/tvStepTwo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fvRegister" />
+
+            <View
+                android:id="@+id/vStepOne"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:onClick="@{()->view.onClickStep(Constants.Count.zero)}"
+                android:background="@{Constants.Count.zero == position ?  @color/textBlack : @color/unSelectGrey}"
+                app:layout_constraintEnd_toEndOf="@+id/tvStepOne"
+                app:layout_constraintStart_toStartOf="@+id/tvStepOne"
+                app:layout_constraintTop_toBottomOf="@+id/tvStepOne" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStepTwo"
+                style="@style/Text.Bold.Medium.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/step_two"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:onClick="@{()->view.onClickStep(Constants.Count.one)}"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:textColor="@{Constants.Count.one == position ?  @color/textBlack : @color/unSelectGrey}"
+                app:layout_constraintEnd_toStartOf="@+id/tvStepThree"
+                app:layout_constraintStart_toEndOf="@+id/tvStepOne"
+                app:layout_constraintTop_toTopOf="@+id/tvStepOne"
+                app:layout_constraintBottom_toBottomOf="@+id/tvStepOne"/>
+
+            <View
+                android:id="@+id/vStepTwo"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:onClick="@{()->view.onClickStep(Constants.Count.one)}"
+                android:background="@{Constants.Count.one == position ?  @color/textBlack : @color/unSelectGrey}"
+                app:layout_constraintEnd_toEndOf="@+id/tvStepTwo"
+                app:layout_constraintStart_toStartOf="@+id/tvStepTwo"
+                app:layout_constraintTop_toBottomOf="@+id/tvStepTwo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStepThree"
+                style="@style/Text.Bold.Medium.Black.Brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/complete"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:onClick="@{()->view.onClickStep(Constants.Count.two)}"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:textColor="@{Constants.Count.two == position ?  @color/textBlack : @color/unSelectGrey}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvStepTwo"
+                app:layout_constraintTop_toTopOf="@+id/tvStepTwo"
+                app:layout_constraintBottom_toBottomOf="@+id/tvStepTwo"/>
+
+            <View
+                android:id="@+id/vStepThree"
+                android:layout_width="@dimen/standard_0"
+                android:layout_height="@dimen/standard_1"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:onClick="@{()->view.onClickStep(Constants.Count.two)}"
+                android:background="@{Constants.Count.two == position ?  @color/textBlack : @color/unSelectGrey}"
+                app:layout_constraintEnd_toEndOf="@+id/tvStepThree"
+                app:layout_constraintStart_toStartOf="@+id/tvStepThree"
+                app:layout_constraintTop_toBottomOf="@+id/tvStepThree" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnProceed"
+                style="@style/CurvedButton"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/bg_green_curved_fill"
+                android:singleLine="true"
+                android:text="@string/btnNext"
+                android:onClick="@{()->view.onClickNext()}"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vStepOne" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

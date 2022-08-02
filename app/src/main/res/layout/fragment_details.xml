@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="com.developer.u_glow.view.fragment.booking.DetailsFragment" />
+        <variable
+            name="listner"
+            type="com.developer.u_glow.viewmodel.booking.DetailsViewModel" />
+
+        <variable
+            name="selected"
+            type="boolean" />
+        <variable
+            name="date"
+            type="String" />
+        <variable
+            name="time"
+            type="String" />
+        <variable
+            name="noTime"
+            type="String" />
+
+        <variable
+            name="Nodate"
+            type="String" />
+        <variable
+            name="selectedAny"
+            type="boolean" />
+        <variable
+            name="selectedOn"
+            type="boolean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.booking.DetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/ic_ellipse_black"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDetail"
+                style="@style/Text.Bold.xLarge.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/the_details"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cardEnterDetailsWant"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_curved_grey_fill"
+                android:gravity="top"
+                android:hint="@string/further_details"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="false"
+                android:overScrollMode="always"
+                android:padding="@dimen/_8sdp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textColorHint="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetail" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtClickButton"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:maxLines="2"
+                android:text="@string/what_your_looking_for"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardEnterDetailsWant" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtUploadImage"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/bg_curved_grey_fill"
+                android:drawableEnd="@drawable/ic_upload_icon"
+                android:maxLines="1"
+                android:onClick="@{()->view.pickImageAlert()}"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/upload_images"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtClickButton" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/txtUploadImage"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/inflate_gallery" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:background="@drawable/bg_curve_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvGallery">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtBudget"
+                    style="@style/Text.Regular.Medium.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:maxLines="1"
+                    android:text="@string/what_is_your_budget"
+                    android:textAlignment="textStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtAmount"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@drawable/bg_rectangle_curve_white_fill"
+                    android:drawableEnd="@drawable/ic_euro_icon"
+                    android:hint="@string/enter_amount"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtBudget" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDateTime"
+                    style="@style/Text.Regular.Medium.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:maxLines="1"
+                    android:text="@string/what_date_and_time"
+                    android:textAlignment="textStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtAmount" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/edtDate"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@drawable/bg_rectangle_curve_white_fill"
+                    android:hint="@string/enter_date"
+                    android:maxLines="1"
+                    android:onClick="@{()->view.showCalendar()}"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/edtTime"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDateTime" />
+
+                <TextView
+                    android:id="@+id/edtTime"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@drawable/bg_rectangle_curve_white_fill"
+                    android:hint="@string/enter_time"
+                    android:maxLines="1"
+                    android:onClick="@{()->view.showTime()}"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/edtDate"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDateTime" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtFlexibleTime"
+                    style="@style/Text.Regular.Medium.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:maxLines="1"
+                    android:text="@string/are_you_flexible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDate" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerFlexible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bg_spinner_flexible"
+                    android:entries="@array/select_time"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:theme="@style/Spinner_flexible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtFlexibleTime" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/edtThisDay"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@{selectedAny? @drawable/bg_curved_grey_border:@drawable/bg_rectangle_curve_white_fill}"
+                    android:hint="@string/on_this_day"
+                    android:maxLines="1"
+                    android:onClick="@{()->view.onClickChangeAnyTimeColor(date)}"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/edtAnyDay"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerFlexible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/edtAnyDay"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@{selectedAny? @drawable/bg_rectangle_curve_white_fill:@drawable/bg_curved_grey_border}"
+                    android:hint="@string/any_day"
+                    android:maxLines="1"
+                    android:onClick="@{()->view.onClickChangeAnyTimeColor(Nodate)}"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/edtThisDay"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerFlexible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/edtThisTime"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@{selectedOn? @drawable/bg_curved_grey_border:@drawable/bg_rectangle_curve_white_fill}"
+                    android:hint="@string/at_this_time"
+                    android:maxLines="1"
+                    android:onClick="@{()->view.onClickChangeAnyDayColor(time)}"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/edtAnyTime"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtThisDay" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/edtAnyTime"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@{selectedOn? @drawable/bg_rectangle_curve_white_fill:@drawable/bg_curved_grey_border}"
+                    android:hint="Anytime"
+                    android:maxLines="1"
+                    android:onClick="@{()->view.onClickChangeAnyDayColor(noTime)}"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/edtThisTime"
+                    app:layout_constraintTop_toBottomOf="@+id/edtAnyDay" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtAddress"
+                    style="@style/Text.Regular.Medium.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:maxLines="2"
+                    android:text="@string/what_is_your_address"
+                    android:textAlignment="textStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtThisTime" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/edtDefaultAddress"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@drawable/bg_rectangle_curve_white_fill"
+                    android:drawableStart="@{selected==true ? @drawable/ic_ellipse_grey : @drawable/bg_circle_pink_fill}"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:maxLines="1"
+                    android:onClick="@{()->view.onClickChangeColor()}"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/default_address"
+                    android:textAlignment="textStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtYourAddress"
+                    style="@style/Text.Regular.Medium.Black.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@drawable/bg_rectangle_curve_white_fill"
+                    android:drawableEnd="@drawable/ic_location_marker"
+                    android:hint="@string/enter_address"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/textBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDefaultAddress" />
+
+                <!--<androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtOrManually"
+                    style="@style/Text.Regular.Medium.White.Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:maxLines="1"
+                    android:visibility="@{selected==true?View.GONE:View.VISIBLE}"
+                    android:text="@string/enter_manually"
+                    android:textAlignment="textStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtYourAddress" />-->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnNext"
+                    style="@style/CurvedButton"
+                    android:layout_width="@dimen/standard_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginBottom="@dimen/_32sdp"
+                    android:background="@drawable/button_fill_green_with_outline"
+                    android:onClick="@{()->listner.postGlow()}"
+                    android:text="@string/updated_details"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtYourAddress" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

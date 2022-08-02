@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#F78900</color>
+    <color name="bgGrey">#DDDEE0</color>
+    <color name="dBgGrey">#e26bba</color>
+    <color name="textGrey">#8E939B</color>
+    <color name="pink">#E26BBA</color>
+    <color name="unSelectGrey">#BCBCBF</color>
+    <color name="textGreyUnselected">#4DFFFFFF</color>
+    <color name="alphaGreen">#6613C6B8</color>
+    <color name="green">#13c6b8</color>
+    <color name="chartColor">#13c6b8</color>
+    <color name="colorSelected">#cccccf</color>
+    <color name="colorView">#ae81b9</color>
+    <color name="textBlack">#1E1E28</color>
+
+</resources>

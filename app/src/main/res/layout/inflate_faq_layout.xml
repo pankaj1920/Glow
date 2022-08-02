@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="selected"
+            type="boolean" />
+        <variable
+            name="view"
+            type="com.developer.u_glow.adapter.viewholder.FaqViewHolder" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/consAddService"
+        style="@style/Text.Regular.Large.Black.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@{selected== true? @drawable/bg_green_outer_border:@drawable/bg_curved_grey_border}"
+        android:drawableEnd="@{selected== true ?@drawable/ic_arrow_up: @drawable/ic_down_black_fill}"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_14sdp"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:onClick="@{()->view.onClickSelect()}"
+        android:text="@string/question_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtWhatUNeed"
+        style="@style/Text.Regular.Brown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:text="@string/about_us"
+        android:gravity="start"
+        android:visibility="@{selected==true?View.VISIBLE:View.GONE}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consAddService" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

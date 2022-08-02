@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+    <variable
+        name="view"
+        type="com.developer.u_glow.view.fragment.profile.GalleryFragment" />
+
+    <import type="android.view.View"/>
+
+</data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_16sdp"
+        android:background="@color/orange">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHeading"
+        style="@style/Text.Bold.xLarge.White.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSetup"
+        style="@style/Text.Regular.Medium.White.Brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/add_images_of_your_work"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/grpEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="vFirst,vSecond,vLast,vHorizontal,vThird"/>
+
+    <View
+        android:id="@+id/vHorizontal"
+        android:layout_width="@dimen/standard_0"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+        app:layout_constraintEnd_toStartOf="@+id/vLast"
+        app:layout_constraintStart_toEndOf="@id/vFirst"
+        app:layout_constraintTop_toTopOf="@id/vFirst" />
+
+    <View
+        android:id="@+id/vFirst"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:background="@drawable/bg_white_curved_fill"
+        android:elevation="@dimen/_1sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSetup" />
+
+    <View
+        android:id="@+id/vSecond"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_white_curved_fill"
+        android:elevation="@dimen/_1sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+        app:layout_constraintEnd_toStartOf="@+id/vThird"
+        app:layout_constraintStart_toEndOf="@+id/vFirst"
+        app:layout_constraintTop_toTopOf="@+id/vFirst" />
+
+    <View
+        android:id="@+id/vThird"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_white_curved_fill"
+        android:elevation="@dimen/_1sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+        app:layout_constraintEnd_toStartOf="@+id/vLast"
+        app:layout_constraintStart_toEndOf="@+id/vSecond"
+        app:layout_constraintTop_toTopOf="@+id/vFirst" />
+
+    <View
+        android:id="@+id/vLast"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_white_curved_fill"
+        android:elevation="@dimen/_1sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/vFirst"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vFirst" />
+
+    <androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/standard_0"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vFirst"
+        tools:context=".view.fragment.profile.GalleryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtUploadImage"
+                style="@style/Text.Regular.Medium.Black.Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/bg_curve_white"
+                android:drawableEnd="@drawable/ic_upload_icon"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/upload_an_image"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/txtUploadImage"
+                app:spanCount="2"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="4"
+                tools:listitem="@layout/inflate_gallery"
+                android:layout_marginHorizontal="@dimen/_16sdp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnUpdate"
+                style="@style/CurvedButton"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginBottom="@dimen/_32sdp"
+                android:background="@drawable/bg_oval_white_fill"
+                android:singleLine="true"
+                android:text="@string/profile"
+                android:onClick="@{()->view.onClickNavigation()}"
+                android:textColor="@color/orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvGallery"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
